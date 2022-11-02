@@ -1,0 +1,178 @@
+---
+title: "**R-Markdown Lab Internal - 2**"
+author: "***evensection_222010307019***"
+date: "***`r Sys.Date()`***"
+output: 
+  html_document: 
+    highlight: espresso
+    theme: sandstone
+    toc: yes
+---
+
+
+# 1. ***Learning the Basics of R-Markdown***
+
+
+- **Write anything here, click on "knit" to create or knit a html file from the R-Markdown doc**
+
+* **Including a hyperlink in this R-Markdown program file, [Below is the link to R-Programming Tutorial]**
+
+***Click here -->*** **https://www.datamentor.io/r-programming/#tutorial**
+
+### Displaying cars dataset below: [using head()]
+
+```{r}
+# using cars dataset.
+# Code:
+answer <- 2 + 4
+answer
+my_data <- cars
+head(my_data)
+```
+### Code below to demonstrate plot() function to plot a scatterplot type of graph:
+
+```{r}
+#Code using plot() function:
+plot(my_data$speed ~ my_data$dist)
+```
+
+### Few more graph examples of various other types:
+
+```{r}
+#Code:
+library(ggplot2)
+library(patchwork)
+p1 <- ggplot(mtcars) + geom_point(aes(mpg, disp))
+p2 <- ggplot(mtcars) + geom_boxplot(aes(gear, disp, group = gear))
+p3 <- ggplot(mtcars) + geom_smooth(aes(disp, qsec)) 
+p4 <- ggplot(mtcars) + geom_bar(aes(carb)) 
+p1
+p2
+p3
+p4
+```
+
+### Demonstration of Overlaying Plots of Sine and Cosine Functions:
+
+```{r}
+#Code:
+x=seq(0,10,0.1)
+plot(x, sin(x),
+main="Overlaying Graphs",
+ylab="",
+type="l",
+col="blue")
+lines(x,cos(x), col="red")
+legend("topleft",
+c("sin(x)","cos(x)"),
+fill=c("blue","red")
+)
+```
+
+
+
+# 2. ***View the Session Information:***
+```{r}
+sessionInfo()
+```
+
+# 3. ***About R programming language***
+
+**R is a programming language and environment commonly used in statistical computing, data analytics and scientific research.**
+
+**It is one of the most popular languages used by statisticians, data analysts, researchers and marketers to retrieve, clean, analyze, visualize and present data.**
+
+**Due to its expressive syntax and easy-to-use interface, it has grown in popularity in recent years.**
+
+# 4. ***Learn why R is widely used for statiscal computing and graphics?***
+
+- **R is open-source and free!**
+
+R is free to download as it is licensed under the terms of the GNU General Public License. You can look at the source to see what’s happening under the hood. There are many R packages available under the same license, so you can use them, even in commercial applications without having to call your lawyer.
+
+- **R is popular – and increasing in popularity**
+
+IEEE publishes a list of the most popular programming languages each year. R was ranked 5th in 2016, up from 6th in 2015. It is a big deal for a domain-specific language like R to be more popular than a general-purpose language like C#. This not only shows the increasing interest in R as a programming language, but also of the fields like Data Science and Machine Learning where R is commonly used.
+
+
+- **R runs on all platforms**
+
+You can find distributions of R for all popular platforms – Windows, Linux and Mac.R code that you write on one platform can easily be ported to another without any issues. Cross-platform interoperability is an important feature to have in today’s computing world – even Microsoft is making its coveted .NET platform available on all platforms after realizing the benefits of technology that runs on all systems.
+
+
+- **Learning R will increase your chances of getting a job**
+
+According to the Data Science Salary Survey conducted by O’Reilly Media in 2014, data scientists are paid a median of $98,000 worldwide. The figure is higher in the US – around $144,000.Of course, knowing how to write R programs won’t get you a job straight away, a data scientist has to juggle a lot of tools to do their work. Even if you are applying for a software developer position, R programming experience can make you stand out from the crowd.
+
+
+- **R is being used by the biggest tech giants**
+
+Adoption by tech giants is always a sign of a programming language’s potential. Today’s companies don’t make their decisions on a whim. Every major decision has to be backed by a concrete analysis of data.
+
+
+- **Companies Using R**
+
+R is the right mix of simplicity and power, and companies all over the world use it to make calculated decisions. Here are a few ways industry stalwarts are using R and contributing to the R ecosystem.
+
+
+# 5. ***Applications of R Programming in Real World***
+
+- **Data Science**
+
+Harvard Business Review named data scientist the “sexiest job of the 21st century”. Glassdoor named it the “best job of the year” for 2016. With the advent of IoT devices creating terabytes and terabytes of data that can be used to make better decisions, data science is a field that has no other way to go but up. Simply explained, a data scientist is a statistician with an extra asset: computer programming skills. Programming languages like R give a data scientist superpowers that allow them to collect data in realtime, perform statistical and predictive analysis, create visualizations and communicate actionable results to stakeholders.Most courses on data science include R in their curriculum because it is the data scientist’s favorite tool.
+
+- **Statistical computing**
+
+R is the most popular programming language among statisticians. In fact, it was initially built by statisticians for statisticians. It has a rich package repository with more than 9100 packages with every statistical function you can imagine. R’s expressive syntax allows researchers – even those from non computer science backgrounds to quickly import, clean and analyze data from various data sources.
+R also has charting capabilities, which means you can plot your data and create interesting visualizations from any dataset.
+
+- **Machine Learning**
+
+R has found a lot of use in predictive analytics and machine learning. It has various packages for common ML tasks like linear and non-linear regression, decision trees, linear and non-linear classification and many more. Everyone from machine learning enthusiasts to researchers use R to implement machine learning algorithms in fields like finance, genetics research, retail, marketing and health care.
+
+
+# 6. ***To stay tuned with R follow the respective communities and blogs:***
+
+Learn and get help from others. There are tons of great R communities that will help you solve real-life problems and become better in R.
+
+**Some of them are as follows:**
+
+- StackOverflow – Most Popular programming Q&A site on the web
+- R-bloggers – R news and tutorials contributed by (750) R bloggers
+- R-help – An active mailing list for R
+
+
+# ***-->R Internal - 2 Program:- ***
+
+### *Code below to check whether a given number is prime or not*:
+
+```{r}
+n=5
+count=0
+for (x in 1:n){
+if (n%%x==0){
+count=count+1
+}
+}
+if (count==2){
+print(paste(n,"is a prime no"))
+}else {
+cat(paste(n,"is not a prime no"))
+}
+```
+
+```{r}
+n=6
+count=0
+for (x in 1:n){
+if (n%%x==0){
+count=count+1
+}
+}
+if (count==2){
+print(paste(n,"is a prime no"))
+}else {
+cat(paste(n,"is not a prime no"))
+}
+```
+
